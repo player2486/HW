@@ -29,7 +29,6 @@ def root3(a, b, c, d):
     )
 
 
-# ===== 主程式（一定要有，否則不會顯示）=====
 if __name__ == "__main__":
     roots = root3(1, 0, 0, 1)  # x^3 + 1 = 0
     for r in roots:
