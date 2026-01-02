@@ -1,4 +1,4 @@
-HW1
+**HW1**
 原創
 方法：
 用前向差分法計算導數 df(f, x)
@@ -6,7 +6,7 @@ HW1
 對積分函數 F(x)=∫₀ˣ f(t) dt 做數值微分，檢驗 F'(x) ≈ f(x)
 
 
-HW2
+**HW2**
 原創
 方法
 
@@ -86,7 +86,7 @@ ax
 
 
 
-HW3
+**HW3**
 AI資料遺失
 標準化三次方程
 
@@ -267,8 +267,9 @@ b
 
 
 
-HW4
+**HW4**
 AI資料遺失
+
 多項式值與導數計算
 
 poly_val(coef, x) → 用 Horner 法計算 
@@ -361,13 +362,13 @@ P(x)=(x−r)Q(x)
 
 
 
-HW5
+**HW5**
 GPT https://chatgpt.com/share/695771f7-5f74-8011-8ea8-5b97ad960546
 
 
 
 
-HW6
+**HW6**
 GPT https://chatgpt.com/share/6957d189-3888-8011-8326-2d6c8e263add
 點(Point)：平面上的座標 (x, y)。
 
@@ -614,11 +615,11 @@ cos
 
 
 
-HW7
+**HW7**
 Gemini https://gemini.google.com/share/55f6bd481b17
 GPT https://chatgpt.com/share/6957c249-f66c-8011-a2a4-0c372d01d58a
 
-HW8
+**HW8**
 GPT https://chatgpt.com/share/6957c5ab-fd94-8011-ab7a-fecb889d3e39
 
 1. 機率計算：公平銅板連續投擲問題： 連續投擲 $n$ 次，全部得到正面的機率 $P(\text{All Heads})$。
@@ -659,7 +660,7 @@ GPT https://chatgpt.com/share/6957c5ab-fd94-8011-ab7a-fecb889d3e39
 
 
 
-HW9
+**HW9**
 GPT https://chatgpt.com/share/6957cad3-8c1c-8011-96b6-85ac30a9d4f9
 1. 遞迴計算行列式（Laplace 展開法）
 
@@ -933,7 +934,7 @@ C 做特徵值分解 → 特徵向量為主成分方向，特徵值表示方差�
 
 
 
-HW10
+**HW10**
 Gemini https://gemini.google.com/share/e2f95998218f
 
 1. DFT (正轉換)目的： 將時域序列 $x[n]$ 轉換為頻域分量 $X[k]$。
@@ -950,7 +951,7 @@ Gemini https://gemini.google.com/share/e2f95998218f
 
 3. 驗證DFT 和 IDFT 互為反函式。當 $f \xrightarrow{\text{DFT}} F \xrightarrow{\text{IDFT}} f_{\text{restored}}$ 時，$f_{\text{restored}}$ 會等於 $f$，證明了轉換的可逆性。
 
-HW11
+**HW11**
 GPT https://chatgpt.com/share/6957ce10-e200-8011-8228-e66a29de9ce6
 
 
