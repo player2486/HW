@@ -84,6 +84,8 @@ ax
 
 回傳兩個根 (r1, r2)
 
+
+
 HW3
 AI資料遺失
 標準化三次方程
@@ -263,6 +265,8 @@ x=t−
 b
 	​
 
+
+
 HW4
 AI資料遺失
 多項式值與導數計算
@@ -355,8 +359,13 @@ P(x)=(x−r)Q(x)
 
 二次以下直接解出最後根
 
+
+
 HW5
 GPT https://chatgpt.com/share/695771f7-5f74-8011-8ea8-5b97ad960546
+
+
+
 
 HW6
 GPT https://chatgpt.com/share/6957d189-3888-8011-8326-2d6c8e263add
@@ -603,35 +612,52 @@ cos
 )
 (x,y)→(xcosθ−ysinθ,xsinθ+ycosθ)
 
+
+
 HW7
 Gemini https://gemini.google.com/share/55f6bd481b17
 GPT https://chatgpt.com/share/6957c249-f66c-8011-a2a4-0c372d01d58a
 
 HW8
 GPT https://chatgpt.com/share/6957c5ab-fd94-8011-ab7a-fecb889d3e39
+
 1. 機率計算：公平銅板連續投擲問題： 連續投擲 $n$ 次，全部得到正面的機率 $P(\text{All Heads})$。
+
 方法： 獨立事件的機率乘法原理。
+
 算式：$$P(\text{All Heads}) = P(H_1) \times P(H_2) \times \dots \times P(H_n)$$對於公平銅板，單次正面機率 $p = 0.5$。$$P(\text{All Heads}) = (0.5)^n = (0.5)^{10000}$$
 
 2. 對數計算：使用對數處理極小機率問題： 計算 $\log(0.5^{10000})$。
+
 方法： 對數的冪次法則，主要用於在電腦中避免處理極小的浮點數（下溢問題），或用於計算對數損失 (Log Loss)。
+
 算式：$$\log(p^n) = n \cdot \log(p)$$代入數值：$$\log(0.5^{10000}) = 10000 \cdot \log(0.5)$$（在程式碼中，math.log 通常指自然對數 $\ln$ 或 $\log_e$。）
 
 3. 資訊理論量計算假設 $X$ 是一個離散隨機變量，其機率分佈為 $P = \{P(x_1), P(x_2), \dots, P(x_K)\}$。
+
 資訊量 (Measure)算式 (Formula)簡短解釋熵 (Entropy) $H(P)$$$H(P) = -\sum_{i=1}^{K} P(x_i) \log_2 P(x_i)$$衡量隨機變量 $X$ 的不確定性或所需的平均最小編碼長度 (bits)。
+
 交叉熵 (Cross-Entropy) $H(P, Q)$$$H(P, Q) = -\sum_{i=1}^{K} P(x_i) \log_2 Q(x_i)$$衡量使用分佈 $Q$ 來編碼真實分佈 $P$ 所需的平均編碼長度。在機器學習中用作損失函數。KL 散度 (KL Divergence) $D_{\text{KL}}(P \parallel Q)$$$D_{\text{KL}}(P \parallel Q) = \sum_{i=1}^{K} P(x_i) \log_2 \frac{P(x_i)}{Q(x_i)}$$或$$D_{\text{KL}}(P \parallel Q) = H(P, Q) - H(P)$$衡量從 $Q$ 到 $P$ 的資訊損失，即兩個分佈之間的差異程度。
+
 互資訊 (Mutual Information) $I(X; Y)$$$I(X; Y) = \sum_{x} \sum_{y} P(x, y) \log_2 \frac{P(x, y)}{P(x) P(y)}$$或$$I(X; Y) = H(X) + H(Y) - H(X, Y)$$衡量隨機變量 $X$ 和 $Y$ 之間的相關性。它表示知道一個變量後，另一個變量不確定性減少的量。
 
 4. 交叉熵不等式驗證問題： 驗證 $H(P, P) \le H(P, Q)$。方法： 吉布斯不等式 (Gibbs' Inequality)。
+
 算式：吉布斯不等式是資訊理論的基本定理，它證明了 $\log$ 函數的凸性。$$D_{\text{KL}}(P \parallel Q) = H(P, Q) - H(P)$$因為 KL 散度定義為非負 ($D_{\text{KL}}(P \parallel Q) \ge 0$)，所以：$$H(P, Q) - H(P) \ge 0$$$$H(P, Q) \ge H(P)$$因為 $H(P, P) = H(P)$，所以：$$H(P, Q) \ge H(P, P)$$等號成立當且僅當 $P = Q$。這證明了當 $Q \ne P$ 時，交叉熵 $H(P, Q)$ 總是會比最小熵 $H(P, P)$ 大。
 
 5. 7-4 漢明碼的編碼與解碼方法： 線性區塊碼。使用生成矩陣 $G$ 和校驗矩陣 $H$ 進行編碼和錯誤檢測。
+
 5.1 編碼 (Encoding)算式： 碼字 $\mathbf{c}$ 等於資料位元 $\mathbf{d}$ 乘以生成矩陣 $G$，在模 2下運算。$$\mathbf{c} = \mathbf{d} G \quad (\text{mod } 2)$$其中 $\mathbf{d}$ 是 $1 \times 4$ 行向量，$\mathbf{c}$ 是 $1 \times 7$ 行向量，$G$ 是 $4 \times 7$ 矩陣。
+
 5.2 錯誤檢測與糾錯 (Error Correction)算式： 接收到的碼字 $\mathbf{r}$ 乘以校驗矩陣 $H$ 的轉置，計算伴隨式 (Syndrome) $\mathbf{s}$。$$\mathbf{s} = \mathbf{r} H^T \quad (\text{mod } 2)$$其中 $\mathbf{r}$ 是 $1 \times 7$ 行向量，$\mathbf{s}$ 是 $1 \times 3$ 行向量。原理：如果 $\mathbf{s} = [0, 0, 0]$，表示沒有檢測到錯誤。如果 $\mathbf{s} \ne [0, 0, 0]$，則 $\mathbf{s}$ 的二進制值正好是發生錯誤的位元位置（從右邊數起 $1$ 到 $7$）。
 
 6. 夏農信道編碼定理與夏農-哈特利定理夏農信道編碼定理：核心量： 離散無記憶信道容量 $C$。
+
 定義： 信道容量 $C$ 是在所有可能的輸入機率分佈 $P(X)$ 中，輸入 $X$ 與輸出 $Y$ 之間互資訊 $I(X; Y)$ 的最大值。$$C = \max_{P(X)} I(X; Y)$$意義： 只要傳輸速率 $R < C$，就可以實現任意小的錯誤機率。夏農-哈特利定理：應用範圍： 帶寬限制的加性高斯白噪聲 (AWGN) 連續信道。
+
 算式：$$C = B \log_2 \left(1 + \frac{S}{N}\right)$$意義： 這給出了 AWGN 信道容量的具體極限，其中 $B$ 是帶寬，$S/N$ 是信噪比。這說明了容量是帶寬和信噪比的函數。
+
+
 
 HW9
 GPT https://chatgpt.com/share/6957cad3-8c1c-8011-96b6-85ac30a9d4f9
@@ -905,20 +931,29 @@ C 做特徵值分解 → 特徵向量為主成分方向，特徵值表示方差�
 
 選前 k 個特徵向量做降維投影
 
+
+
 HW10
 Gemini https://gemini.google.com/share/e2f95998218f
+
 1. DFT (正轉換)目的： 將時域序列 $x[n]$ 轉換為頻域分量 $X[k]$。
+
 算式$$X[k] = \sum_{n=0}^{N-1} x[n] \cdot e^{-i \frac{2\pi}{N} k n}$$
+
 程式碼實現 (dft)核心是雙重迴圈，針對每個輸出頻率 $k$：用內層迴圈 (索引 $n$) 執行求和 $\sum$ 運算。計算 $x[n]$ 與負指數複數波 $e^{-i \dots}$ 的乘積，將它們累積到 $X[k]$。$X[k]$ 代表訊號中頻率 $k$ 的成分有多強。
 
 2. IDFT (逆轉換)目的： 將頻域分量 $X[k]$ 重新合成回原始的時域序列 $x[n]$。 
+
 算式$$x[n] = \frac{1}{N} \sum_{k=0}^{N-1} X[k] \cdot e^{i \frac{2\pi}{N} k n}$$
+
 程式碼實現 (idft)結構與 DFT 相似，但有兩個關鍵差異：指數正負號相反： 使用正指數複數波 $e^{+i \dots}$。歸一化： 最後必須將求和結果除以 $N$ (即 $\frac{1}{N}$ 因子)。這個過程相當於將所有頻率的波形 $X[k]$ 加權相加，在時域點 $n$ 處重建原始訊號。
 
 3. 驗證DFT 和 IDFT 互為反函式。當 $f \xrightarrow{\text{DFT}} F \xrightarrow{\text{IDFT}} f_{\text{restored}}$ 時，$f_{\text{restored}}$ 會等於 $f$，證明了轉換的可逆性。
 
 HW11
 GPT https://chatgpt.com/share/6957ce10-e200-8011-8228-e66a29de9ce6
+
+
 假設微分方程為
 
 𝑎
